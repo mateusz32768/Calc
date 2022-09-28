@@ -6,18 +6,22 @@ let currValue = "";
 
 let refreshDisplay = () => {
     //console.log(currValue);
-    if (currValue.length > 0) dispControl.textContent = currValue;
-    else if (prevValue !== null) dispControl.textContent = prevValue;
-    else dispControl.textContent = "0";
+    if (currValue.length > 0) {
+        dispControl.textContent = currValue;
+    } else if (prevValue !== null) {
+        dispControl.textContent = prevValue;
+    } else {
+        dispControl.textContent = "0";
+    }
 };
 
 let calculate = (val1, val2, operator) => {
     let v1Num = Number(val1);
     let v2Num = Number(val2);
-    if (operator === "+") return v1Num + v2Num;
-    if (operator === "-") return v1Num - v2Num;
-    if (operator === "*") return v1Num * v2Num;
-    if (operator === "/") return v1Num / v2Num;
+    if (operator === "Plus") return v1Num + v2Num;
+    if (operator === "Min") return v1Num - v2Num;
+    if (operator === "Mul") return v1Num * v2Num;
+    if (operator === "Div") return v1Num / v2Num;
 };
 
 let onBtnClick = (e) => {
